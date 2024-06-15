@@ -5,7 +5,7 @@ Obsidian template for managing personal to do list.
 ## Description
 
 - For managing advanced to do list
-- In weekly tempalate, you can check daily plan at a glance
+- In weekly template, you can check daily plan at a glance
 - In daily template, you can check weekly to do list
 
   ```markdown
@@ -59,4 +59,4 @@ Templates
    1. If create new daily to do file, at that file you can create weekly markdown file but it is not adjusted template.
    2. Use short key `cmd + p` (you need to set command palette).
    3. Search keyword `template`, and Select the `Templates: Insert template` menu.
-   4. You can find template list and select Weekly Tmeaplte
+   4. You can find template list and select `Weekly Template`.
