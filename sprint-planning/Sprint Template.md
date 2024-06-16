@@ -1,15 +1,8 @@
-<!--
-	TODO: Need to develop
-				- change query data range from title or metadata
-				- Add team plan
--->
-
 ---
-
-tags:
-
-- ***
-
+tags: 
+sprint start: 
+sprint end:
+---
 ## Sprint To Do
 
 ### Service Name
@@ -19,13 +12,13 @@ tags:
 ## Daily To Do at Glance
 
 ```dataviewjs
-const createDay = `${dv.page('').file.cday}`
-const startOfWeek = moment(createDay).startOf('week');
-const endOfWeek = moment(createDay).endOf('week');
+const startOfSprint = moment(dv.page('')["sprint start"]?.ts);
+const endOfSprint = moment(dv.page('')["sprint end"]?.ts);
 
-let day = startOfWeek;
-while (day <= endOfWeek) {
-	const formattedDay = moment(day.toDate()).format('YYYY-MM-DD(ddd)');
+let day = startOfSprint;
+
+while (day <= endOfSprint) {
+	const formattedDay = moment(day.toDate()).format('[Planning]/YYYY/[Day]/MMMM/wo/YYYY-MM-DD(ddd)');
 
 	dv.paragraph(dv.sectionLink(formattedDay, "Today To Do", true, formattedDay))
 
@@ -36,14 +29,13 @@ while (day <= endOfWeek) {
 ## Daily Issues at a Glance
 
 ```dataviewjs
-const createDay = `${dv.page('').file.cday}`;
-const startOfWeek = moment(createDay).startOf('week');
-const endOfWeek = moment(createDay).endOf('week');
+const startOfSprint = moment(dv.page('')["sprint start"]?.ts);
+const endOfSprint = moment(dv.page('')["sprint end"]?.ts);
 
-let day = startOfWeek;
+let day = startOfSprint;
 
-while (day <= endOfWeek) {
-	const formattedDay = moment(day.toDate()).format('YYYY-MM-DD(ddd)');
+while (day <= endOfSprint) {
+	const formattedDay = moment(day.toDate()).format('[Planning]/YYYY/[Day]/MMMM/wo/YYYY-MM-DD(ddd)');
 
 	dv.paragraph(dv.sectionLink(formattedDay, "Issues", true, formattedDay))
 
