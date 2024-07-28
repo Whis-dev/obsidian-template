@@ -4,7 +4,7 @@ const sprintFolderPath = `Planning/${todayDate.year}/Sprint`
 const sprintList = dv.pages(`"${sprintFolderPath}"`)
 const findSprint = sprintList.values.find(sprint => sprint["sprint start"]?.ts <= todayDate.ts && todayDate.ts <= sprint["sprint end"]?.ts);
 
-const sprintPath = findSprint?.path || `${sprintFolderPath}/${moment(todayDate.ts).format('MMMM')}/Sprint ${sprintList.length + 1}`
+const sprintPath = findSprint?.file.path || `${sprintFolderPath}/${moment(todayDate.ts).format('MMMM')}/Sprint ${sprintList.length + 1}`
 
 
 
